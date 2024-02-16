@@ -1,0 +1,363 @@
+* {
+    /* Resetear margin y padding por defecto */
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /* Variables CSS */
+    --color-principal: #0476b8;
+    --color-secundario: #b63cfd;
+    --color-acento: #ffffff;
+    --opacidad: 0.6;
+    --gradiente-semi: linear-gradient(to top right, rgba(5, 120, 186, var(--opacidad)), rgba(181, 59, 252, var(--opacidad)));
+    --imagen-fondo: url("https://i.pinimg.com/originals/05/34/39/0534399ed647e520d234c9bb77fe366a.gif");
+
+    /* Estilos generales */
+    font-family: 'American Typewriter', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* BARRA DE NAVEGACIÓN */
+nav {
+    background-color: var(--color-acento);
+    padding: 0px 0px 0px 20px;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    ul {
+        display: flex;
+        list-style: none;
+    }
+
+    li a {
+        padding: 100px 35px;
+        color: #222;
+        text-decoration: none;
+        transition: background-color .5s ease;
+
+        &:hover {
+            background-color: #d3d3d3;
+        }
+    }
+
+    img {
+        width: 58px;
+    }
+}
+
+.menu-desplegable {
+    display: none;
+
+    padding: 15px;
+}
+
+.btn-desplegable:hover .menu-desplegable {
+    display: block;
+    position: fixed;
+    top: 10vh;
+
+    background-color: white;
+}
+
+.mvl-desplegable {
+    display:none;
+}
+
+.pag-actual {
+    background-color: #d3d3d3;
+}
+
+/* CABECERA */
+header {    
+    background: var(--gradiente-semi), var(--imagen-fondo);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        padding: 15px;
+        background-color: white;
+        margin: 20px;
+        border: 5px solid white;   
+        font-weight: 900; 
+    }
+
+    .btn-vacio {
+        background-color: transparent;
+        color: white;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+      
+    .btn-relleno:hover {
+        background-color: transparent;
+        color: white;
+    }
+
+    h1 {
+        color: var(--color-acento);
+        font-size: 4em;
+        border: 5px dashed white;
+        padding: 5px;
+    }
+}
+
+/* MAIN */
+main {
+    width: 60vw;
+    margin: 10px auto;
+}
+
+.sec-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: justify;
+    text-wrap: pretty;
+    z-index: 6;
+
+    > h2 {
+        margin-top: 10vh;
+        margin-bottom: 2vh;
+        font-size: 250%;
+    }
+
+    .columna {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+article {
+    display: flex;
+    gap: 15px;
+    z-index: 6;
+
+    img {
+        width: 25%;
+    }
+
+    p {
+        margin: 15px 0px 35px 0px;
+    }
+
+    a {
+        text-decoration: none;
+        padding: 20px 25px;
+        color: #222;
+        background-color: #d3d3d3;
+        transition: all .5s ease;
+
+        &:hover {
+            background-color: #0476b8;
+            color: white;
+        }
+    }
+}
+
+.sec-tarjeta {
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 6;
+}
+
+.tarjeta {
+    background-color: #d3d3d3;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 15px;
+
+    width: 30%;
+
+    img {
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+
+    h3, h4, p {
+        margin: 0px 15px;
+    }
+
+    a {
+        background-color: #0476b8;
+        color: white;
+        text-decoration: none;
+        padding: 15px 0px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        text-align: center;
+        transition: all .5s ease;
+
+        &:hover {
+            background-color: #b63cfd;
+        }
+    }
+}
+
+.iconos-sociales {
+    margin: 25px 0px;
+    display: flex;
+    justify-content: center;    
+    gap: 10px;
+    z-index: 4;
+
+    /*Para que se quede pegado a la derecha mientras navego*/
+    align-items: flex-end;
+    flex-direction: column;
+    margin-right: -14vw;
+    position: sticky;
+    bottom: 10px;
+
+    a {
+        width: 48px;
+        height: 48px;
+        background-color: #c5d6e0;
+        border: 1px solid #0476b8;
+        border-radius: 3px;
+        transition: background-color .5s ease;
+
+        &:hover {
+            background-color: #62a5cc;
+        }
+    }
+
+    svg {
+        width: 48px;
+        height: 48px;
+        fill: #0476b8;
+    }
+}
+
+.sec-form {
+    margin: 50px auto;
+    width: fit-content;
+    background-color: #d3d3d3;
+    padding: 50px;
+    border-radius: 5px;
+    text-align: center;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.form-texto{
+    margin: 0px 10px;
+    border: none;
+    background-color: transparent;
+    font-family: "American Typewriter";
+    border-bottom: 1px solid #0476b8;
+    padding: 5px 5px 0px 5px;
+}
+
+
+#caja-tick{
+    border: none;
+}
+
+#btn-mandar{
+    border: none;
+    padding: 15px;
+    margin: auto;
+
+    &:hover {
+        background-color: #0476b8;
+        color: white;
+    }
+}
+
+/* PIE DE PÁGINA */
+footer {
+    background-color: var(--color-acento);
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+
+    p {
+        font-size: 75%;
+    }
+}
+
+
+/*TODO LO QUE TIENE QUE VER CON MÓVIL ESTÁ A PARTIR DE AQUÍ*/
+@media screen and (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        height: 25vh;
+        text-align: center;
+        gap: 10px;
+        padding-left: 0px;
+
+        ul {
+            flex-direction: column;
+            gap: 5px;
+            
+            li {
+                display: none;
+            }
+        }
+
+        li a {
+            padding: 0;
+        }
+    }
+
+    .pag-actual {
+        background-color: transparent;
+    }
+
+    header {
+        height: 75vh;
+
+        h1 {
+            font-size: 2.2rem;
+        }
+    }
+
+    main {
+        width: 94vw;
+    }
+
+    .columna {
+        flex-direction: column;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    .sec-tarjeta {
+        flex-direction: column;
+    }
+
+    .tarjeta {
+        width: 100%;
+    }
+}
